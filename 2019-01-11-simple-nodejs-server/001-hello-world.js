@@ -6,7 +6,7 @@ const requestHandler = (request, response) => {
   console.log('Request Headers:', request.headers)
 
   // response.end('Greetings from your friendly neighourhood nodejs server!')
-  response.setHeader('Content-Type', 'application/json')
+  response.setHeader('Content-Type', 'this is a header - even though the browser does not understand it')
   response.end(JSON.stringify(request.headers, null, 2))
 }
 
