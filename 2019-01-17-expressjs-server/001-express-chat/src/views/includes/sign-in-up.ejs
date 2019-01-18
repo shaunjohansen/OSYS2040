@@ -1,0 +1,8 @@
+
+<% if (signedInAs) { %>
+  <div>Signed in as <%= signedInAs %></div>
+  <a href="/auth/sign-out">Sign Out</a>
+<% } else { %>
+  <a href="/auth/sign-in">Sign In</a>
+  <a href="/auth/sign-up">Sign Up</a>
+<% } %>

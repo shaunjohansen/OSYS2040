@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Sign Up As A New User</h1>
+    <form action="/auth/sign-up" method="post">
+      <div>
+        <label for="userId">Handle:</label>
+        <input type="text" id="userId" name="userId" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  </body>
+</html>

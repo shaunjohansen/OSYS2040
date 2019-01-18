@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= userIds.length %> User<%= userIds.length > 1 ? "s" : "" %></h1>
+    <ul>
+      <% userIds.forEach(function(userId){ %>
+        <li>
+          <%= userId %>
+          <% if (userId === req.cookies.userId) { %>
+            <b>(you)</b>
+          <% } %>
+        </li>
+      <% }) %>
+    </ul>
+
+    <a href="/">Home</a>
+
+    <%- include('./includes/sign-in-up.ejs') %>
+
+  </body>
+</html>

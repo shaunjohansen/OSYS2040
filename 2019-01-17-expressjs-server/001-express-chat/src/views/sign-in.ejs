@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Sign In</h1>
+    <form action="/auth/sign-in" method="post">
+      <div>
+        <label for="userId">Handle:</label>
+        <input type="text" id="userId" name="userId" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+  </body>
+</html>

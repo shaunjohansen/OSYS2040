@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome <%= signedInAs %> to <%= title %></p>
+
+    <a href="/users">Users</a>
+
+    <%- include('./includes/sign-in-up.ejs') %>
+
+  </body>
+</html>
