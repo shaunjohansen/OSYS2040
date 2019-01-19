@@ -1,6 +1,14 @@
+const DataUtil = require('../utils/DataUtil')
+
 module.exports = (req, res, next) => {
-  res.locals.signedInAs = req.cookies.userId
-  console.log('res.locals.signedInAs', res.locals.signedInAs)
+  const userId = req.cookies.userId
+
+  const users = DataUtil.readUsers()
+  if (users[userId]) {
+    res.locals.signedInAs = userId
+  } else {
+    res.locals.signedInAs = undefined
+  }
 
   next()
 }

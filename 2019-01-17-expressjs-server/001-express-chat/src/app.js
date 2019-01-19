@@ -25,8 +25,9 @@ app.use((req, res, next) => {
 })
 
 app.use('/', require('./routes/index'))
-app.use('/users', require('./routes/users'))
-app.use('/auth', require('./routes/auth'))
+app.use('/users', require('./routes/users.js'))
+app.use('/auth', require('./routes/auth.js'))
+app.use('/chat', require('./routes/chat.js'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= roomIds.length %> Chat Room<%= (!roomIds.length || roomIds.length > 1) ? "s" : "" %></h1>
+    <ul>
+      <% roomIds.forEach(function(roomId){ %>
+        <li>
+          <a href="/chat/<%= roomId %>">
+            <%= rooms[roomId].roomName %>
+          </a>
+          <%= new Date(rooms[roomId].updatedAt).toLocaleString() %>
+        </li>
+      <% }) %>
+    </ul>
+
+    <% if (signedInAs) { %>
+      <div>Hi <%= signedInAs %>, want to create a chat room?</div>
+
+      <form action="/chat/create-room" method="post">
+        <div>
+          <label for="roomName">Room Name:</label>
+          <input type="text" id="roomName" name="roomName" required>
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    <% } %>
+
+    <%- include('./includes/page-footer.ejs') %>
+
+  </body>
+</html>

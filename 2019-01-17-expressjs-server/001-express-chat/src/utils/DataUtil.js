@@ -23,4 +23,7 @@ function writeDataFile(name, data) {
 module.exports = {
   readUsers: () => readDataFile('users'),
   writeUsers: (data) => writeDataFile('users', data),
+
+  readRooms: () => readDataFile('chat-rooms'),
+  writeRooms: (data) => writeDataFile('chat-rooms', data),
 }

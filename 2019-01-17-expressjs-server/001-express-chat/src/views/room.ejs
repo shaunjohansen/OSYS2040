@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= room.roomName %></h1>
+    <p>Chatting since <%= new Date(room.createdAt).toLocaleString() %>.</p>
+
+    <% if (room.messages.length === 0) { %>
+      <p>No Messages</p>
+    <% } %>
+    <% room.messages.forEach(function(message) { %>
+      <p>
+        <b><%= message.createdBy %></b>
+        <%= new Date(message.createdAt).toLocaleTimeString() %>
+        :
+        <span>
+          <%= message.message %>
+        </span>
+      </p>
+    <% }) %>
+
+    <% if (signedInAs) { %>
+      <div>Hi <%= signedInAs %>, leave a message:</div>
+
+      <form action="/chat/<%= room.roomId %>/create-message" method="post">
+        <div>
+          <label for="message">Message:</label>
+          <textarea type="text" id="message" name="message" required cols="40" rows="2"></textarea>
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    <% } %>
+
+    <%- include('./includes/page-footer.ejs') %>
+
+  </body>
+</html>
